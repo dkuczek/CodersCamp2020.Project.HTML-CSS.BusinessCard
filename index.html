@@ -2,14 +2,17 @@
 <html lang="pl">
 
 <head>
-    <!-- Required meta tags -->
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>CodersCamp | Projekt 1 - HTML i CSS</title>
+    <title>Damian Kuczek - portfolio</title>
     <meta name="description"
         content="CodersCamp to darmowy, otwarty kurs programowania webowego we Wrocławiu. Sprawdź, czego nauczysz się na CodersCamp i spróbuj swoich sił w branży IT!">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+
 
 </head>
 
@@ -22,26 +25,86 @@
         <a href="#hobby">hobby</a>
         <a href="#contact">contact</a>
     </nav>
-    <header>
+    <section class="start">
         <div class="intro">
             <h1>Hi! I'm Damian</h1>
             <h2>Web developer</h2>
             <button>contact me</button>
         </div>
-    </header>
+    </section>
     <section class="about">
-        <p>about</p>
+        <div class="photo-face"><img src="img/face.jpg" alt="face"></div>
+        <div class="card">
+            <header class="header">
+                <p>About me</p>
+            </header>
+
+            <div class="text">
+                <p>
+                    I'm Damian. I study automation and robotics at the University of Science and Technology in Cracow. I
+                    have been learning programming since 2019. I use HTML, CSS and JavaScript in my projects.Moreover, I
+                    am a participant in the CodersCamp programming course. This portfolio is created as one of the
+                    projects in the course.</p>
+            </div>
+        </div>
     </section>
     <section class="projects">
-        <p>recent projects</p>
+        <div class="header">
+            <p>My recent projects</p>
+        </div>
+        <div class="container">
+            <div class="project1 project-card"><a class="details" href="#">
+                    <p>See more</p>
+                </a></div>
+            <div class="project2 project-card"><a class="details" href="#">
+                    <p>See more</p>
+                </a></div>
+            <div class="project3 project-card"><a class="details" href="#">
+                    <p>See more</p>
+                </a></div>
+        </div>
+
+
+
     </section>
     <section class="hobby">
-        <p>hobby</p>
+        <div class="header">
+            <p>Hobbies</p>
+        </div>
+        <div class="container">
+            <img class="travel" src="img/travel.jpg" alt="travel">
+            <img class="gym" src="img/gym.jpg" alt="gym">
+        </div>
+        <div class="container">
+            <img class="electronics" src="img/electronics.jpg" alt="electronics">
+            <img class="football" src="img/football.jpg" alt="football">
+        </div>
+
     </section>
+
     <section class="contact">
-        <p>contact</p>
+        <div class="info">
+            <div><i class="fas fa-map-marker-alt"></i>Cracow, Poland</div>
+            <div><i class="fas fa-envelope"></i>contact@gmail.com</div>
+            <div><i class="fas fa-phone"></i>+48 555 555 666</div>
+
+        </div>
+        <div class="form">
+
+            <form class="contact-form" action="" method="post">
+                <input type="text" name="name" class="text-box" placeholder="Your Name" required>
+                <input type="email" name="email" class="text-box" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
     </section>
-    <div class="footer">Damian Kuczek 2020</div>
+
+
+
+    <div class="footer"> <i class="fab fa-github-square"></i><i class="fab fa-linkedin"></i>Damian Kuczek 2020<i
+            class="fab fa-facebook-square"></i><i class="fab fa-twitter-square"></i>
+    </div>
 </body>
 
 </html>

@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -8,6 +9,7 @@ body {
     height: 300vh;
     max-width: 1920px;
     margin: 0 auto;
+    font-family: Roboto, Helvetica, sans-serif;
 }
 
 nav {
@@ -15,7 +17,7 @@ nav {
     background-color: #222;
     width: 100%;
     overflow: hidden;
-    z-index: 1;
+    z-index: 2;
 }
 
 nav a {
@@ -26,9 +28,7 @@ nav a {
     text-decoration: none;
     font-size: 17px;
     text-transform: uppercase;
-    font-family: Arial, Helvetica, sans-serif;
     transition: .3s;
-
 }
 
 nav a:hover {
@@ -36,7 +36,12 @@ nav a:hover {
     color: black;
 }
 
-header {
+section {
+    display: block;
+    height: 100vh;
+}
+
+.start {
     height: 100vh;
     background-image: url(img/header.jpg);
     background-size: cover;
@@ -44,7 +49,7 @@ header {
 
 }
 
-header:after {
+.start:after {
     content: "";
     display: block;
     height: 100vh;
@@ -58,13 +63,14 @@ header:after {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 2;
+    z-index: 1;
+    letter-spacing: 2px;
 
 }
 
 .intro h1,
 .intro h2 {
-    font-family: Arial, Helvetica, sans-serif;
+
     font-size: 40px;
     padding: 10px;
     color: white;
@@ -77,9 +83,12 @@ header:after {
     transform: translate(-50%);
     background-color: transparent;
     color: white;
-    padding: 5px 10px;
+    padding: 10px 20px;
     text-transform: uppercase;
-    border: 2px solid white;
+    border: 3px solid white;
+    cursor: pointer;
+    font-size: 20px;
+    transition: .2s;
 }
 
 .intro button:hover {
@@ -94,26 +103,319 @@ header:after {
 }
 
 
-section {
-    display: block;
-    height: 800px;
-}
 
 .about {
-    background-color: #aaa;
+    background-color: #c0c0c0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
+.about .photo-face img {
+
+    height: 280px;
+    width: 280px;
+    border-radius: 50%;
+    border: 3px solid #888888;
+}
+
+.about .card {
+    width: 50%;
+    height: 50%;
+    background-color: #fff;
+    box-shadow: 10px 10px #888888;
+    font-family: Roboto, Arial, sans-serif;
+    overflow: hidden;
+}
+
+.about .card .header {
+    padding: 10px 20px;
+    font-size: 30px;
+    line-height: 1.6;
+    background-color: #555;
+    color: white;
+    letter-spacing: 2px;
+
+}
+
+.about .card .text {
+    padding: 10px 20px;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+
+
 .projects {
+
     background-color: rgb(107, 91, 91);
 }
 
-.hobby {
-    background-color: rgb(171, 180, 138);
+.projects .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    width: 100%;
+    height: 15%;
+    font-size: 40px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 1px;
 }
 
-.contact {
-    background-color: rgb(86, 85, 107);
+.projects .header::after {
+    content: "";
+    display: block;
+    height: 5px;
+    width: 20%;
+    background-color: white;
+    margin-top: 10px;
+
 }
+
+.projects .container {
+    width: 100%;
+    height: 85%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.projects .container .project-card {
+    position: relative;
+    height: 70%;
+    width: 25%;
+    background-color: #ddd;
+    border-radius: 5%;
+    background-size: cover;
+
+}
+
+.projects .container .project-card a {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    border-radius: 5%;
+    opacity: 0;
+    text-decoration: none;
+    color: white;
+    font-family: Roboto, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    transition: .4s;
+}
+
+.projects .container .project-card a p {
+    display: block;
+    position: absolute;
+    padding: 10px 20px;
+    border: 2px solid white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.projects .container .project-card:hover a {
+    opacity: 80%;
+}
+
+.projects .container .project1 {
+    background-image: url(img/bank.jpg);
+}
+
+.projects .container .project2 {
+    background-image: url(img/industry.jpg);
+}
+
+.projects .container .project3 {
+    background-image: url(img/food.jpg);
+}
+
+.hobby {
+    background-color: #c0c0c0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+.hobby .header {
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+    height: 15%;
+    font-size: 40px;
+    font-weight: 700;
+    color: #1e1e1e;
+    letter-spacing: 1px;
+}
+
+.hobby .container {
+    position: relative;
+    height: 40%;
+    width: 35%;
+    border: 2px solid black;
+
+}
+
+.hobby .container img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.hobby .container .gym {
+    animation: photo1 10s infinite;
+}
+
+.hobby .container .football {
+    animation: photo2 12s infinite;
+}
+
+@keyframes photo1 {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes photo2 {
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+
+.contact {
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    background-color: rgb(107, 91, 91);
+}
+
+.contact .info {
+    color: #fff;
+    width: 50%;
+    line-height: 65px;
+    padding-left: 50px;
+    font-size: 18px;
+
+}
+
+.contact .info i {
+    margin-left: 40px;
+    margin-right: 20px;
+    font-size: 25px;
+}
+
+
+
+.contact .form {
+    height: 100%;
+    width: 50%;
+    margin-top: 50px;
+}
+
+.contact .form .contact-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+
+.contact .form .text-box {
+    display: block;
+    background: #000;
+    color: #fff;
+    border: none;
+    width: 40%;
+    height: 50px;
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.contact .form .text-box:first-child {
+    margin-right: 15px;
+}
+
+.contact .form textarea {
+    display: block;
+    background: #000;
+    color: #fff;
+    border: none;
+    width: 90%;
+    padding: 12px;
+    font-size: 15px;
+    min-height: 200px;
+    max-height: 400px;
+    resize: vertical;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.contact .form button {
+    display: block;
+    background: #2E94E3;
+    color: #fff;
+    border: none;
+    width: 160px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
 
 .footer {
     width: 100%;
@@ -122,4 +424,321 @@ section {
     text-align: center;
     line-height: 50px;
     color: #fff;
+}
+
+.footer i {
+    font-size: 20px;
+    margin: 0 10px;
+    line-height: 50px;
+}
+
+.footer i:hover {
+    cursor: pointer;
+}
+
+
+@media (max-width: 1024px) {
+
+    .about .card .text {
+        padding: 10px 20px;
+        font-size: 16px;
+        line-height: 1.4;
+        text-align: justify;
+    }
+}
+
+@media (max-width: 768px) {
+    nav a {
+        color: red;
+        font-size: 12px;
+    }
+
+    .intro h1,
+    .intro h2 {
+
+        font-size: 26px;
+        padding: 10px;
+        color: white;
+    }
+
+    .intro button {
+
+        padding: 5px 15px;
+        border: 2px solid white;
+        font-size: 16px;
+
+    }
+
+    .about {
+        flex-direction: column;
+
+    }
+
+    .about .photo-face img {
+
+        height: 200px;
+        width: 200px;
+    }
+
+    .about .card {
+        width: 70%;
+        height: 40%;
+
+    }
+
+    .about .card .text {
+
+        font-size: 14px;
+        line-height: 1.2;
+
+    }
+
+
+
+    .projects .header p {
+        margin-top: 40px;
+        font-size: 26px;
+    }
+
+    .projects .header::after {
+        height: 3px;
+
+    }
+
+    .projects .container {
+        flex-direction: column;
+    }
+
+    .projects .container .project-card {
+        height: 30%;
+        width: 60%;
+    }
+
+
+
+    .projects .container .project-card a p {
+        padding: 5px 15px;
+        border: 2px solid white;
+        text-align: center;
+    }
+
+    .hobby {
+        flex-direction: column;
+    }
+
+    .hobby .header {
+        text-align: center;
+        text-transform: uppercase;
+
+    }
+
+
+
+    .hobby .container {
+        height: 35%;
+        width: 50%;
+    }
+
+    .contact {
+        height: 60vh;
+    }
+
+    .contact .info {
+        line-height: 65px;
+        padding-left: 20px;
+        font-size: 16px;
+    }
+
+    .contact .info i {
+        margin-left: 30px;
+        margin-right: 20px;
+        font-size: 20px;
+    }
+
+
+
+    .contact .form .text-box {
+        height: 40px;
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .contact .form .text-box:first-child {
+        margin-right: 5px;
+    }
+
+    .contact .form textarea {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .contact .form button {
+
+        width: 100px;
+        height: 30px;
+        font-size: 12px;
+
+    }
+
+}
+
+@media (max-width: 480px) {
+
+
+    nav a {
+        color: red;
+        width: 100%;
+        padding: 5px;
+        font-size: 10px;
+    }
+
+    .intro button {
+        margin-top: 15px;
+        padding: 5px 10px;
+        border: 2px solid white;
+        font-size: 14px;
+    }
+
+    .intro h1,
+    .intro h2 {
+
+        font-size: 20px;
+        padding: 10px;
+        color: white;
+    }
+
+    .about {
+        height: 80vh;
+        justify-content: flex-start;
+    }
+
+    .about .photo-face img {
+        margin-top: 20px;
+        height: 200px;
+        width: 200px;
+
+    }
+
+    .about .card {
+        margin-top: 20px;
+        width: 80%;
+        height: 35%;
+        box-shadow: 5px 5px #888888;
+    }
+
+    .about .card .header {
+        padding: 5px 10px;
+        font-size: 20px;
+        line-height: 1.2;
+        letter-spacing: 1px;
+
+    }
+
+    .about .card .text {
+        padding: 5px 10px;
+        font-size: 14px;
+        line-height: 1.2;
+    }
+
+    .projects .header {
+        font-size: 30px;
+    }
+
+    .projects .header::after {
+
+        height: 2px;
+
+
+    }
+
+    .projects .container {
+
+        justify-content: flex-start;
+
+    }
+
+    .projects .container .project-card {
+        margin-top: 10px;
+        height: 30%;
+        width: 50%;
+    }
+
+
+
+    .projects .container .project-card a p {
+        font-size: 14px;
+        padding: 5px 10px;
+
+    }
+
+    .hobby {
+        flex-direction: column;
+        justify-content: flex-start;
+
+    }
+
+    .hobby .header {
+        margin-top: 15px;
+
+        font-size: 30px;
+
+    }
+
+    .hobby .container {
+        margin-top: 25px;
+
+        height: 30%;
+        width: 55%;
+
+
+    }
+
+    .contact {
+        height: 50vh;
+        align-items: baseline;
+    }
+
+    .contact .info {
+        line-height: 40px;
+        padding-left: 20px;
+        font-size: 12px;
+    }
+
+    .contact .info i {
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: 12px;
+    }
+
+
+
+    .contact .form .text-box {
+        height: 20px;
+        font-size: 10px;
+        margin-bottom: 10px;
+        padding: 5px;
+    }
+
+    .contact .form .text-box:first-child {
+        margin-right: 5px;
+    }
+
+    .contact .form textarea {
+        padding: 5px;
+        font-size: 10px;
+        margin-bottom: 10px;
+        min-height: 100px;
+
+    }
+
+    .contact .form button {
+
+        width: 100px;
+        height: 30px;
+        font-size: 10px;
+
+    }
+
+
+
 }
